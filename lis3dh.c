@@ -83,12 +83,13 @@ void LIS3DH_Init(void)
 
 	/*
 	 *
-	 * write to control register 4: 0000 1000
+	 * write to control register 4: 0000 1100, 0000 1010 in two seperate functions
 	 *
-	 * 1000 enables high resolution mode
-	 *
+	 * 1100 high resolution mode, self test 1
+	 * 1010 high resolution mode, self test 0
 	 */
-	LIS3DH_WriteReg(LIS3DH_CTRL_REG4, 0x08);
+	LIS3DH_WriteReg(LIS3DH_CTRL_REG4, 0x0C);
+	LIS3DH_WriteReg(LIS3DH_CTRL_REG4, 0x0A);
 
 }
 
